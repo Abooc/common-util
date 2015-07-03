@@ -1,4 +1,4 @@
-package com.abooc.common.samples;
+package com.abooc.common;
 
 import org.lee.java.util.ToString;
 
@@ -10,13 +10,21 @@ import org.lee.java.util.ToString;
  */
 public class Log extends Lg {
 
+	/**
+	 * 打印对象
+	 * @param cls
+	 */
 	public static void d(Object cls) {
-		println(cls.toString());
+		d(cls.toString());
 	}
 
+	/**
+	 * 打印字符数组
+	 * @param a
+	 */
 	public static void d(String[] a) {
 		String str = ToString.toString(a);
-		println(str);
+		d(str);
 	}
 
 }
