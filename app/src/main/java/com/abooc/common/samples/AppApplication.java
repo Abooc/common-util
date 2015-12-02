@@ -2,8 +2,7 @@ package com.abooc.common.samples;
 
 import android.app.Application;
 
-import com.abooc.common.Log;
-import com.abooc.common.Toast;
+import com.abooc.util.Debug;
 
 /**
  * Created by author:李瑞宇
@@ -16,8 +15,10 @@ public class AppApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Log.anchor();
-        Log.e("test 'e()' method.");
-        Toast.init(this);
+        Debug.anchor();
+
+        Debug.debug();
+        Debug.anchor();
+
     }
 }

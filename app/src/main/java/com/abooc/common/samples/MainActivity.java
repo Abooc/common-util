@@ -1,12 +1,11 @@
 package com.abooc.common.samples;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.abooc.common.Log;
-import com.abooc.common.Toast;
+import com.abooc.util.Debug;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
     }
 
@@ -42,7 +42,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.anchor();
-        Toast.show("onResume()");
+        Debug.anchor();
+        Debug.debug();
+        Debug.anchor();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Debug.destroy();
     }
 }

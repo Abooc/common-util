@@ -16,7 +16,7 @@ ext {
     gitUrl = 'https://github.com/Abooc/common-util.git'
 
     // 发布版本
-    libraryVersion = '0.1.2'
+    libraryVersion = '0.2.0'
 
     // 开发者信息
     developerId = 'ruiyulee'

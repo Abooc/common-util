@@ -11,6 +11,7 @@ import org.lee.java.util.Type;
 class Lg {
 
     public static final String TAG = "TAG";
+    private static final int LOG_ID_EVENTS = 2;
 
     /** */
     public static boolean DEBUG = true;
@@ -22,7 +23,7 @@ class Lg {
 
     /**
      * 设置Debug模式
-     * @param enable
+     * @param enable 是否开启Debug模式，true则打印log，false则关闭log打印。
      */
     public static void setDebugEnable(boolean enable) {
         DEBUG = enable;
@@ -38,7 +39,7 @@ class Lg {
     /**
      * 基方法
      *
-     * @param cls
+     * @param cls class Or Object
      */
     public static void anchor(Object cls) {
         if (!isDebug()) return;
@@ -74,7 +75,7 @@ class Lg {
         d(stringBuffer.toString() + mMessageFooter);
     }
 
-    public static String toStrackTraceString(Object cls) {
+    public static String toStackTraceString(Object cls) {
         StackTraceElement[] stack = new Exception().getStackTrace();
         return stack[2].toString() + mMessageHeader + cls.toString()
                 + mMessageFooter;
@@ -83,7 +84,7 @@ class Lg {
     public static void e(Object cls) {
         if (!isDebug()) return;
 
-        String str = toStrackTraceString(cls);
+        String str = toStackTraceString(cls);
         android.util.Log.e(TAG, str);
     }
 
@@ -94,7 +95,8 @@ class Lg {
     public static void d(String msg) {
         if (!isDebug()) return;
 
-        android.util.Log.d(TAG, msg);
+
+        android.util.Log.println(LOG_ID_EVENTS, TAG, msg);
     }
 
 }

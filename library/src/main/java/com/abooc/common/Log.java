@@ -12,7 +12,7 @@ public class Log extends Lg {
 
 	/**
 	 * 打印对象
-	 * @param cls
+	 * @param cls Object
 	 */
 	public static void d(Object cls) {
 		d(cls.toString());
@@ -20,10 +20,10 @@ public class Log extends Lg {
 
 	/**
 	 * 打印字符数组
-	 * @param a
+	 * @param array 数组
 	 */
-	public static void d(String[] a) {
-		String str = ToString.toString(a);
+	public static void d(String[] array) {
+		String str = ToString.toString(array);
 		d(str);
 	}
 
