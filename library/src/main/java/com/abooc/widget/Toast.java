@@ -1,14 +1,16 @@
-package com.abooc.common;
+package com.abooc.widget;
 
 import android.content.Context;
 
 /**
- * 自定义优化的Toast，继承自android.widget.Toast. <br>
+ * 简单包装Toast，继承自android.widget.Toast. <br>
  * 1.单例化。 <br>
  * 2.调用的方法更简单。 <br>
  * 3.内容即时显示。在前一次执行show且尚未消失时，这时show新内容时，可以即时显示新内容。
  *
- * @author ruiyuLee
+ * Created by author:李瑞宇
+ * email:ruiyulee.mail@gmail.com
+ *
  */
 public class Toast extends android.widget.Toast {
 
