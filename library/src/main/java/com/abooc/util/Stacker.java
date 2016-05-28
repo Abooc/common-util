@@ -4,15 +4,16 @@ package com.abooc.util;
  * Created by author:李瑞宇
  * email:ruiyulee.mail@gmail.com
  * on 15-11-30.
+ *
+ * @hide
  */
-public class Stacker {
+class Stacker {
 
     public static String mMessageHeader = ":\n";
     public static String mMessageFooter = "";
 
     /**
      * @param cls class Or Object
-     *
      * @hide
      */
     protected static String stackString(Object cls, StackTraceElement[] stack, boolean isSimpleName) {
@@ -28,14 +29,16 @@ public class Stacker {
             }
         }
 
-        if(isSimpleName){
+        if (isSimpleName) {
             String className = stack[i].getClassName();
             stringBuffer.delete(0, className.lastIndexOf(".") + 1);
         }
         return stringBuffer.toString() + mMessageFooter;
     }
 
-    /** @hide */
+    /**
+     * @hide
+     */
     private static String toStackTraceString(Object cls) {
         StackTraceElement[] stack = new Exception().getStackTrace();
         return stack[1].toString() + ", " + cls.toString()

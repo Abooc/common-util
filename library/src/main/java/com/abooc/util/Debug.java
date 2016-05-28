@@ -2,6 +2,8 @@ package com.abooc.util;
 
 import android.util.Log;
 
+import com.abooc.debug.BuildConfig;
+
 import java.util.HashSet;
 
 /**
@@ -18,24 +20,31 @@ public class Debug extends Stacker {
     public static boolean isSimpleName = true;
 
     /** */
-    public static boolean DEBUG = true;
+    public static boolean DEBUG = BuildConfig.DEBUG;
+
+    public static void enable(boolean enable) {
+        DEBUG = enable;
+    }
 
     /**
      * 开启Debug
      */
     public static void on() {
         DEBUG = true;
-        System.out.println("Debug is ON.");
+        System.out.println(TAG + " is ON.");
     }
 
     /**
      * 关闭Debug
      */
     public static void off() {
-        System.out.println("Debug is OFF.");
+        System.out.println(TAG + " is OFF.");
         DEBUG = false;
     }
 
+    /**
+     * 锚点，定位
+     */
     public static void anchor() {
         if (DEBUG) {
             StackTraceElement[] stack = new Exception().getStackTrace();
@@ -45,6 +54,23 @@ public class Debug extends Stacker {
         }
     }
 
+    /**
+     * 锚点，定位
+     */
+    public static void anchor(Object o) {
+        if (DEBUG) {
+            StackTraceElement[] stack = new Exception().getStackTrace();
+            String className = stack[1].getClassName();
+            className = className.substring(className.lastIndexOf(".") + 1);
+            Log.d(identify(className), stackString("", stack, isSimpleName));
+        }
+    }
+
+    /**
+     * Debug数据
+     *
+     * @param o 输出的数据
+     */
     public static void d(Object o) {
         if (DEBUG) {
             StackTraceElement[] stack = new Exception().getStackTrace();
@@ -54,6 +80,9 @@ public class Debug extends Stacker {
         }
     }
 
+    /**
+     * ERROR级
+     */
     public static void error() {
         if (DEBUG) {
             StackTraceElement[] stack = new Exception().getStackTrace();
@@ -63,6 +92,11 @@ public class Debug extends Stacker {
         }
     }
 
+    /**
+     * ERROR级
+     *
+     * @param o
+     */
     public static void e(Object o) {
         if (DEBUG) {
             StackTraceElement[] stack = new Exception().getStackTrace();
@@ -79,6 +113,9 @@ public class Debug extends Stacker {
             return TAG;
     }
 
+    /**
+     * Debug本类
+     */
     public static void debug() {
         StackTraceElement[] stack = new Exception().getStackTrace();
         String className = stack[1].getClassName();
@@ -91,7 +128,10 @@ public class Debug extends Stacker {
         }
     }
 
-    public static void destroy() {
+    /**
+     * 移除本类的Debug
+     */
+    public static void dockOut() {
         StackTraceElement[] stack = new Exception().getStackTrace();
         String className = stack[1].getClassName();
         className = className.substring(className.lastIndexOf(".") + 1);
