@@ -24,19 +24,19 @@
 
 ## 使用方法
 
-1. 添加远程仓库
+**1. 添加远程仓库**
 
 ```
 	maven{ url 'http://abooc.com/repository/maven-public/' }
 ```
 
-2. 引入项目
+**2. 引入项目**
 
 ```
     compile 'com.abooc.debug:debug-core:1.1.0'
 ```
 
-3. 开启日志
+**3. 开启日志**
 
 ```java
 public class AppApplication extends Application {
@@ -48,7 +48,7 @@ public class AppApplication extends Application {
         ...
 ```
 
-4. 用于代码定位（代码锚点）
+**4. 用于代码定位（代码锚点）**
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -101,7 +101,7 @@ public void onReceiveMessage(String message) {
 
 ## 高级使用
 
-1. 过滤本类的日志打印
+**1. 过滤本类的日志打印**
 
 自动将**类名**作为打印日志的`TAG`。
 ```
@@ -122,13 +122,13 @@ $ 30586-30586 /com.xxx.xx D/MainActivity:MainActivity.onCreate(MainActivity.java
 ```
 
 
-2. 自定义日志`TAG`
+**2. 自定义日志`TAG`**
 
 ```
 Debug.setTag("test");
 ```
 
-3. 修改日志打印级别
+**3. 修改日志打印级别**
 
 ```
 Debug.setLevel(Log.VERBOSE);
