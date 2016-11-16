@@ -1,4 +1,4 @@
-package com.abooc.common.samples;
+package com.abooc.debug.samples;
 
 import android.app.Application;
 

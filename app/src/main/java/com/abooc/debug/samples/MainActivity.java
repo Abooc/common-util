@@ -1,4 +1,4 @@
-package com.abooc.common.samples;
+package com.abooc.debug.samples;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         boolean enable = Debug.enable();
         Log.d("Debug", "enable:" + enable + ", BuildConfig.DEBUG_ENABLE:" + BuildConfig.DEBUG);
-
-
 
 
         Debug.anchor();
