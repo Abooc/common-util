@@ -13,11 +13,12 @@ public class AppApplication extends Application {
 
     @Override
     public void onCreate() {
+        Debug.enable(BuildConfig.DEBUG);
         super.onCreate();
 
         Debug.anchor();
 
-        Debug.debug();
+        Debug.debugClass();
         Debug.anchor();
 
     }

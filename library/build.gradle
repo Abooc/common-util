@@ -1,22 +1,23 @@
 apply plugin: 'com.android.library'
+apply from: 'maven.gradle'
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'common-util'
+    bintrayName = 'debug'
 
-    publishedGroupId = 'com.abooc'
-    artifact = 'common-util'
+    publishedGroupId = 'com.abooc.debug'
+    artifact = 'debug'
 
     // 项目描述
-    libraryName = 'CommonUtil'
-    libraryDescription = 'Android app dev common utils.'
+    libraryName = 'Debug'
+    libraryDescription = 'Android app dev debug utils.'
 
     // 源码
-    siteUrl = 'https://github.com/Abooc/common-util'
-    gitUrl = 'https://github.com/Abooc/common-util.git'
+    siteUrl = 'https://github.com/abooc/debug'
+    gitUrl = 'https://github.com/abooc/debug.git'
 
     // 发布版本
-    libraryVersion = '0.2.0'
+    libraryVersion = '0.3.0'
 
     // 开发者信息
     developerId = 'ruiyulee'
@@ -31,8 +32,8 @@ ext {
 
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25"
 
     defaultConfig {
         minSdkVersion 14
@@ -55,5 +56,5 @@ dependencies {
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 
-//apply from: '../installv1.gradle'
-//apply from: '../bintrayv1.gradle'
+//apply from: 'installv1.gradle'
+//apply from: 'bintrayv1.gradle'
