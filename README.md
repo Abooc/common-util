@@ -1,8 +1,10 @@
 # debug-core库使用手册
 
-开发语言：`Java`
 
-适于开发平台：`Android`
+* 库名称：`com.abooc.debug:debug-core:1.1.0`
+* 当前版本：`v1.1.0`
+* 开发语言：`Java`
+* 适于开发平台：`Android`
 
 ## 概述
 
@@ -27,7 +29,7 @@
 **1. 添加远程仓库**
 
 ```
-	maven{ url 'http://abooc.com/repository/maven-public/' }
+	maven{ url 'http://oss.abooc.com/repository/maven-public/' }
 ```
 
 **2. 引入项目**
@@ -69,7 +71,7 @@ $ 30586-30586 /com.xxx.xx D/Debug:MainActivity.onCreate(MainActivity.java:19):
 
 **输出表示**：
 
-Debug锚点定位到类`MainActivity.java`的`onCreate`方法，具体在第`19`行。且生成名为`MainActivity.java:19`的超链接，鼠标左击可定位到代码处。
+> Debug锚点定位到类`MainActivity.java`的`onCreate`方法，具体在第`19`行。且生成名为`MainActivity.java:19`的超链接，鼠标左击可定位到代码处。
 
 即，`Debug.anchor()`方法的作用：
 
@@ -80,7 +82,7 @@ Debug锚点定位到类`MainActivity.java`的`onCreate`方法，具体在第`19`
 
 此方法通常用于：对代码的**执行流程**进行锚点，方便检验代码执行顺序是否与期望一致。
 
-5. 用于打印
+**5. 用于打印**
 
 ```
 @Override
@@ -89,7 +91,7 @@ public void onReceiveMessage(String message) {
 }
 ```
 
-6. 用于`ERROR`级别打印
+**6. 用于`ERROR`级别打印**
 
 ```
 @Override
