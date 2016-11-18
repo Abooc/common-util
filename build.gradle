@@ -3,9 +3,7 @@
 buildscript {
     repositories {
         jcenter()
-//        maven {
-//            url 'https://dl.bintray.com/abooc/maven/'
-//        }
+//        maven { url 'https://dl.bintray.com/abooc/maven/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
@@ -18,8 +16,13 @@ buildscript {
     }
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
 allprojects {
     repositories {
+        maven { url (properties.getProperty("nexus.REPOSITORY_SERVER") + 'repository/maven-public/') }
         jcenter()
     }
 }
