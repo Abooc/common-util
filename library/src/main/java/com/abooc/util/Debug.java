@@ -73,6 +73,9 @@ public class Debug extends Stacker {
     }
 
 
+    /**
+     * @param tag 设置TAG
+     */
     public static void setTag(String tag) {
         TAG = tag;
     }
@@ -94,8 +97,8 @@ public class Debug extends Stacker {
     }
 
     /**
-     * @param TAG
-     * @param message
+     * @param TAG     TAG
+     * @param message 输出的数据
      */
     private static void output(String TAG, String message) {
         switch (LEVEL) {
@@ -135,6 +138,8 @@ public class Debug extends Stacker {
 
     /**
      * 锚点，定位
+     *
+     * @param o 输出的数据
      */
     public static void anchor(Object o) {
         if (DEBUG_ENABLE) {
@@ -174,7 +179,7 @@ public class Debug extends Stacker {
     /**
      * ERROR级
      *
-     * @param o
+     * @param o 输出的数据
      */
     public static void error(Object o) {
         if (DEBUG_ENABLE) {
@@ -185,6 +190,10 @@ public class Debug extends Stacker {
         }
     }
 
+    /**
+     * @param cls class
+     * @return String
+     */
     private static String identify(String cls) {
         if (mClassSet.contains(cls)) {
             return cls;

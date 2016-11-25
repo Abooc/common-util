@@ -4,8 +4,6 @@ package com.abooc.util;
  * Created by author:李瑞宇
  * email:ruiyulee.mail@gmail.com
  * on 15-11-30.
- *
- * @hide
  */
 class Stacker {
 
@@ -13,8 +11,10 @@ class Stacker {
     public static String mMessageFooter = "";
 
     /**
-     * @param cls class Or Object
-     * @hide
+     * @param cls          class Or Object
+     * @param stack        stack
+     * @param isSimpleName 是否SimpleName
+     * @return String
      */
     protected static String stackString(Object cls, StackTraceElement[] stack, boolean isSimpleName) {
         String me = stack[0].getMethodName();
@@ -37,7 +37,8 @@ class Stacker {
     }
 
     /**
-     * @hide
+     * @param cls class
+     * @return String
      */
     private static String toStackTraceString(Object cls) {
         StackTraceElement[] stack = new Exception().getStackTrace();
