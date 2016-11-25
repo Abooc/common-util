@@ -231,4 +231,29 @@ public class Debug extends Stacker {
         }
 
     }
+
+    /**
+     *
+     * 打印堆栈错误信息
+     * @param throwable 错误
+     * @return 如果有错误则返回true，否则返回false
+     */
+    public static boolean printStackTrace(Throwable throwable) {
+        if (throwable != null) {
+            Log.e("System.err", Log.getStackTraceString(throwable));
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 打印System.out.println()信息
+     * @param o 输出的数据
+     */
+    private static void out(Object o) {
+        if (!DEBUG_ENABLE) {
+            System.out.println(o);
+        }
+    }
+
 }
