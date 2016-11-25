@@ -250,7 +250,7 @@ public class Debug extends Stacker {
      * 打印System.out.println()信息
      * @param o 输出的数据
      */
-    private static void out(Object o) {
+    public static void out(Object o) {
         if (!DEBUG_ENABLE) {
             System.out.println(o);
         }
