@@ -141,7 +141,7 @@ public class Debug extends Stacker {
             StackTraceElement[] stack = new Exception().getStackTrace();
             String className = stack[1].getClassName();
             className = className.substring(className.lastIndexOf(".") + 1);
-            output(identify(className), stackString("", stack, isSimpleName));
+            output(identify(className), stackString(o, stack, isSimpleName));
         }
     }
 
