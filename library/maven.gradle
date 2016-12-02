@@ -15,9 +15,9 @@ afterEvaluate { project ->
                 pom.artifactId = artifactId
                 pom.version = version
 
-                def String server = properties.getProperty("nexus.REPOSITORY_SERVER")
-                String snapshot_url = server + REPOSITORY_SNAPSHOTS;
-                String releases_url = server + REPOSITORY_RELEASES;
+                def String snapshot_url = properties.getProperty("nexus.REPOSITORY_SNAPSHOTS");
+                def String releases_url = properties.getProperty("nexus.REPOSITORY_RELEASES");
+
                 println('-----------------START----------------')
                 println snapshot_url
                 println releases_url
