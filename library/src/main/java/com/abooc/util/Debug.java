@@ -251,7 +251,7 @@ public class Debug extends Stacker {
      * @param o 输出的数据
      */
     public static void out(Object o) {
-        if (!DEBUG_ENABLE) {
+        if (DEBUG_ENABLE) {
             System.out.println(o);
         }
     }
