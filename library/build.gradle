@@ -1,45 +1,16 @@
 apply plugin: 'com.android.library'
 apply from: 'maven.gradle'
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'debug'
-
-    publishedGroupId = 'com.abooc.debug'
-    artifact = 'debug'
-
-    // 项目描述
-    libraryName = 'Debug'
-    libraryDescription = 'Android app dev debug utils.'
-
-    // 源码
-    siteUrl = 'https://github.com/abooc/debug'
-    gitUrl = 'https://github.com/abooc/debug.git'
-
-    // 发布版本
-    libraryVersion = '0.3.0'
-
-    // 开发者信息
-    developerId = 'ruiyulee'
-    developerName = 'Ruiyu Lee'
-    developerEmail = 'ruiyulee.mail@gmail.com'
-
-    // 许可
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
+//apply from: 'jcenter.gradle
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 9
         targetSdkVersion 23
         versionCode 2
-        versionName "1.0.1"
+        versionName version
     }
     buildTypes {
         release {
@@ -52,9 +23,3 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
-
-//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
-
-//apply from: 'installv1.gradle'
-//apply from: 'bintrayv1.gradle'
