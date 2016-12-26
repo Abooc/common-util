@@ -3,7 +3,7 @@ debug-core库使用手册
 
 
 * 库名称：`com.abooc.debug:debug-core:latest.release`
-* 当前版本：`v1.1.6`
+* 当前版本：`v1.2.1`
 * 开发语言：`Java`
 * 适于开发平台：`Android`
 
@@ -26,18 +26,18 @@ debug-core库使用手册
 * `Toast.class`
 * 显示吐司
 
-预览重要方法：
+预览主要方法：
 
-- Debug.debugOn();
-- Debug.debugOff();
-- Debug.enable(boolean enable);
-- Debug.anchor();
-- Debug.anchor(anything to string);
-- Debug.error(string);
-- Debug.setLevel(Log.level);
-- Debug.setTag("TAG");
-- Debug.debugClass();
-- Debug.destroyClass();
+- `Debug.debugOn();`
+- `Debug.debugOff();`
+- `Debug.enable(boolean enable);`
+- `Debug.anchor();`
+- `Debug.anchor(anything to string);`
+- `Debug.error(string);`
+- `Debug.setLevel(Log.level);`
+- `Debug.setTag("TAG");`
+- `Debug.debugClass();`
+- `Debug.destroyClass();`
 
 ## 使用方法
 

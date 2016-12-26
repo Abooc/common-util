@@ -27,7 +27,7 @@ public class Debug extends Stacker {
     /**
      * 日志开关
      */
-    public static boolean DEBUG_ENABLE = BuildConfig.DEBUG;
+    public static boolean DEBUG_ENABLE = true;
     public static final int DEFAULT_LEVEL = Log.DEBUG;
     /**
      * 日志级别

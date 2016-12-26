@@ -18,7 +18,7 @@ afterEvaluate { project ->
                 def String snapshot_url = properties.getProperty("nexus.REPOSITORY_SNAPSHOTS");
                 def String releases_url = properties.getProperty("nexus.REPOSITORY_RELEASES");
 
-                println('-----------------START----------------')
+                println('-----------------INFO START----------------')
                 println snapshot_url
                 println releases_url
 
@@ -36,40 +36,35 @@ afterEvaluate { project ->
         }
     }
 
-    boolean doc_enable = java.lang.Boolean.valueOf(java_doc_enable)
-    boolean source_enable = java.lang.Boolean.valueOf(java_source_enable)
-
-    if (doc_enable) {
-        task androidJavadocs(type: Javadoc) {
-            source = android.sourceSets.main.java.srcDirs
-            classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-        }
-        task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-            classifier = 'javadoc'
-            from androidJavadocs.destinationDir
-        }
+    task androidJavadocs(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+    task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+        classifier = 'javadoc'
+        from androidJavadocs.destinationDir
     }
 
-    if (source_enable) {
-        task androidSourcesJar(type: Jar) {
-            classifier = 'sources'
-            from android.sourceSets.main.java.sourceFiles
-        }
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.sourceFiles
     }
 
     artifacts {
         println 'groupId:' + groupId
         println 'artifactId:' + artifactId
         println 'version:' + version
-        println '支持源码:' + java_source_enable
-        println '支持文档:' + java_doc_enable
-        println '-----------------END----------------'
 
+        boolean doc_enable = java.lang.Boolean.valueOf(java_doc_enable)
+        boolean source_enable = java.lang.Boolean.valueOf(java_source_enable)
         if (source_enable) {
             archives androidSourcesJar
+            println '支持源码:' + java_source_enable
         }
         if (doc_enable) {
             archives androidJavadocsJar
+            println '支持文档:' + java_doc_enable
         }
+        println '-----------------INFO END----------------'
     }
 }
